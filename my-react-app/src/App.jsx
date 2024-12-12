@@ -1,19 +1,24 @@
-import Product from "./components/Product";
-import inceptionImage from "./assets/inception.jpg";
-import ironManImage from "./assets/ironman3.jpg";
-import titanicImage from "./assets/titanic.jpg";
-import jurassicImage from "./assets/jurassic-world.jpg";
-import tokyoDriftImage from "./assets/thefastandthefurioustokyodrift.jpg";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import About from "./Pages/About";
+import Counter from "./Pages/Counter";
+import Home from "./Pages/Home";
+
 function App() {
   return (
-    <>
-      <Product title="Inception" price="10$" image={inceptionImage} />
-      <Product title="Iron Man 3" price="20$" image={ironManImage} />
-      <Product title="Titanic" price="30$" image={titanicImage} />
-      <Product title="Jurassic World" price="40$" image={jurassicImage} />
-      <Product title="Tokyo Drift" price="50$" image={tokyoDriftImage} />
-    </>
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} /> 
+          <Route path="/about" element={<About />} />
+          <Route path="/counter" element={<Counter />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
-export default App
+export default App;
