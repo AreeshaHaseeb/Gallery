@@ -1,7 +1,7 @@
 import React, { useState } from "react"; 
+import image from "../assets/background-image.jpg";
 import "./Counter.css";
 const Counter = () => {
-    console.log("Counter Component Rendered"); 
     const [counter, setCounter] = useState(0)
     const incrementCounter = () => {
         setCounter(counter + 1);
@@ -13,11 +13,21 @@ const Counter = () => {
         setCounter(0);
     }
         return (
+            <div
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              height: "100vh",
+              width: "100%",
+            }}
+          >
             <div className="buttons">
                 {counter}
                 <button onClick={incrementCounter}>+</button>
                 <button onClick={decrementCounter}>-</button>
                 <button onClick={resetCounter}>reset</button>
+            </div>
             </div>
         );
     };

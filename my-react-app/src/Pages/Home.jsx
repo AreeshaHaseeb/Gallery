@@ -15,7 +15,7 @@ const Home = () => {
         backgroundImage: `url(${image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "100%vh",
+        height: "432vh",
         width: "100%",
       }}
     >
