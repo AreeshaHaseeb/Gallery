@@ -46,6 +46,7 @@
     background-color: #007BFF;
     color: white;
     cursor: pointer;
+    margin-left: 50px;
   }
   
   .maincontent button:hover {

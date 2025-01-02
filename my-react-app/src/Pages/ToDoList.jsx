@@ -1,31 +1,47 @@
 import React, { useState } from "react";
 import "./Todolist.css";
 
+const initialTasks = ["Code", "Eating", "Drinking"];
+
 const ToDoList = () => {
-    const [tasks, setTasks] = useState(["Code", "Eating", "Drinking"]);
+    const [tasks, setTasks] = useState(initialTasks); 
 
-    function handleAddTask(){
-        const newTasks = document.getElementById("taskInput").value;
-        document.getElementById("taskInput").value = "";
-        setTasks(t =>[...t, newTasks]);
-    }
+    const [inputValue, setInputValue] = useState("");
 
-    function handleRemoveTask(index){
-        setTasks(tasks.filter((_, i) => i !== index));
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
+    };
+
+    const handleAddTask = () => {
+        if (inputValue.trim() !== "") { 
+            setTasks((prevTasks) => [...prevTasks, inputValue]); 
+            setInputValue(""); 
+        }
+    };
+
+
+    function handleRemoveTask(index) {
+        setTasks(tasks.filter((_, i) => i !== index)); 
     }
 
     return (
         <div className="maincontent">
-            <h2>List of Items to Complete Today</h2>
-            <ul>
-                {tasks.map((task, index) => 
-                    <li key={index} onClick={() => handleRemoveTask(index)}>
-                        {task}
-                    </li>
-                )}
-            </ul>
-            <input type="text" placeholder="Enter your task" id="taskInput"/>
+            <h2>To-Do List</h2>
+            <input
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange} 
+                placeholder="Add Task"
+            />
             <button onClick={handleAddTask}>Add Task</button>
+            <ul>
+                {tasks.map((task, index) => (
+                    <li key={index}>
+                        {task}
+                        <button onClick={() => handleRemoveTask(index)}>Remove</button>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };
