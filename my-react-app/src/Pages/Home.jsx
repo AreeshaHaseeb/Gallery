@@ -1,6 +1,6 @@
 import React from "react";
 import "../app.css";
-import Product from "/src/Components/Product.jsx";
+import Product from "../Components/Product.jsx";
 import image from "../assets/background-image.jpg";
 import inceptionImage from "../assets/inception.jpg";
 import ironManImage from "../assets/ironman3.jpg";
