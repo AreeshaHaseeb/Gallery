@@ -1,19 +1,4 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: 100%;
-}
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
 
 .footer {
   background-color: #333;
@@ -21,7 +6,7 @@ main {
   text-align: center;
   padding: 20px 0;
   width: 100%;
-  margin-top: auto;
+  margin-top: 50px;
 }
 
 .footer p {
